@@ -1,0 +1,53 @@
+.hero-illustration {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #FFDAB9; /* ソフトピーチ色 */
+    overflow: hidden;
+    box-shadow: inset 0 -10px 20px rgba(0,0,0,0.05);
+}
+
+.person {
+    position: absolute;
+    bottom: -10px;
+}
+
+.head {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ffccaa;
+    position: absolute;
+    left: 25px;
+    top: 20px;
+}
+
+.body {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px 50px 0 0;
+    position: absolute;
+    top: 70px;
+}
+
+.father {
+    left: 10px;
+}
+.father .head { left: 40px; top: 10px; background: #faddc2; }
+.father .body { left: 10px; background: #82ccdd; width: 110px; }
+
+.mother {
+    right: 10px;
+}
+.mother .head { left: 10px; top: 15px; }
+.mother .body { right: 10px; background: #f8a5c2; width: 90px; }
+
+.baby {
+    left: 75px;
+    bottom: -5px;
+    z-index: 10;
+}
+.baby .head { width: 40px; height: 40px; left: 5px; top: 40px; background: #ffe4e1; }
+.baby .body { width: 50px; height: 50px; left: 0px; top: 80px; background: #fff0f5; }

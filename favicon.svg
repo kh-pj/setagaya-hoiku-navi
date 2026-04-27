@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#2d7cbc"/>
+  <!-- 屋根 -->
+  <polygon points="16,5 28,15 4,15" fill="white"/>
+  <!-- 壁 -->
+  <rect x="8" y="15" width="16" height="11" fill="white"/>
+  <!-- ドア -->
+  <rect x="13" y="19" width="6" height="7" fill="#2d7cbc" rx="1"/>
+  <!-- 煙突（小さい子=保育園のシンボル） -->
+  <rect x="20" y="8" width="3" height="5" fill="white"/>
+</svg>

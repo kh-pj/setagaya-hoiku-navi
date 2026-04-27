@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KK8KHXY1CK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-KK8KHXY1CK');
+</script>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="世田谷区の保育施設利用調整基準表に基づいた選考ポイント（指数）を自動計算できるシミュレーターです。父・母の状況を選ぶだけで簡単に保活の点数が分かります。">
+    <meta name="keywords" content="世田谷区, 保育園, 選考ポイント, 指数, 計算, シミュレーター, 保活, 基準表">
+    <meta property="og:title" content="世田谷区 保育園 選考ポイント計算シミュレーター｜点数の自動計算">
+    <meta property="og:description" content="世田谷区の保育施設利用調整基準表に基づいた選考ポイント（指数）を自動計算できるシミュレーター。">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="世田谷保育ナビ">
+    <meta property="og:image" content="https://nursery.setagaya.root-for.jp/images/criteria.webp">
+    <link rel="canonical" href="https://nursery.setagaya.root-for.jp/criteria">
+    <title>世田谷区 保育園 選考ポイント計算シミュレーター｜点数の自動計算｜世田谷保育ナビ</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "トップ", "item": "https://nursery.setagaya.root-for.jp/" },
+            { "@type": "ListItem", "position": 2, "name": "選考ポイント表" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "世田谷区の保育園の選考ポイント（指数）とは何ですか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "選考ポイント（指数）は、保育園の入園選考で使われる点数です。父母それぞれの就労状況や家庭の状況に応じて基本点数が決まり、調整指数を加減して合計点で選考されます。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "保育園に入るには何点必要ですか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "世田谷区では、フルタイム共働きの場合は基本点が52点（父26点＋母26点）です。人気園では52点以上が必要になることもあり、調整指数で加点を得ることが重要です。"
+                }
+            }
+        ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+            letter-spacing: 0.03em;
+            background: #f8f9fa;
+            color: #444;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 70px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 24px;
+            border-left: 1px solid #e2e7ea;
+            border-right: 1px solid #e2e7ea;
+            min-height: 100vh;
+        }
+
+        /* --- Global Header --- */
+        .app-header {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e7ea;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+        }
+
+        .site-title {
+            text-decoration: none;
+            color: #555858;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            letter-spacing: 0.1em;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 8px;
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            color: #878c8c;
+            font-size: 12px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .header-nav a:hover,
+        .header-nav a.active {
+            background: #f3f5f4;
+            color: #555858;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            color: #2c3e50;
+            margin: 40px 0 12px;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        /* スコア固定表示 */
+        .score-bar {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 24px;
+            position: sticky;
+            top: 60px;
+            z-index: 100;
+            background: rgba(248, 249, 250, 0.9);
+            padding: 12px 0;
+            backdrop-filter: blur(8px);
+        }
+
+        .sbox {
+            flex: 1;
+            min-width: 120px;
+            max-width: 180px;
+            background: white;
+            border: 1px solid #e2e7ea;
+            border-radius: 4px;
+            padding: 16px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .sbox .lbl {
+            font-size: 12px;
+            color: #878c8c;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .sbox .pts {
+            font-size: 32px;
+            font-weight: 800;
+            color: #2c3e50;
+            line-height: 1.1;
+        }
+
+        .sbox.mom .pts {
+            color: #555858;
+        }
+
+        .sbox.total {
+            border-color: #2d7cbc;
+        }
+
+        .sbox.total .pts {
+            color: #2d7cbc;
+        }
+
+        .notice {
+            font-size: 14px;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 20px 24px;
+            border-radius: 8px;
+            margin: 24px auto;
+            line-height: 1.8;
+            max-width: 900px;
+            text-align: left;
+            border: 2px solid #e2e7ea;
+            border-left: 6px solid #2d7cbc;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        .notice b {
+            color: #555858;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        h2.sec {
+            font-size: 18px;
+            color: #2c3e50;
+            border-left: 4px solid #2d7cbc;
+            padding-left: 12px;
+            margin: 48px 0 12px;
+            font-weight: 800;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #878c8c;
+            margin: 0 0 16px 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin-bottom: 24px;
+            border: 1px solid #e2e7ea;
+        }
+
+        table th {
+            padding: 12px 8px;
+            text-align: center;
+            background: #f8f9fa;
+            color: #555858;
+            border: 1px solid #e2e7ea;
+            font-weight: 700;
+        }
+
+        .th-cat {
+            text-align: left;
+        }
+
+        table td {
+            padding: 10px 12px;
+            border: 1px solid #e2e7ea;
+            vertical-align: middle;
+            color: #444;
+        }
+
+        tr.cat td {
+            background: #f3f5f4;
+            font-weight: 800;
+            border-left: 4px solid #555858;
+            color: #2c3e50;
+        }
+
+        tr.subcat td {
+            background: #fafafa;
+            font-size: 12px;
+            color: #878c8c;
+            padding: 8px 8px 8px 24px;
+        }
+
+        .stripe {
+            background: #fdfdfd;
+            color: #d1d8dc;
+            text-align: center;
+            font-size: 11px;
+        }
+
+        td.rc {
+            text-align: center;
+            min-width: 44px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #2d7cbc;
+        }
+
+        td.sd,
+        td.sm,
+        td.sa {
+            text-align: center;
+            font-weight: 800;
+            color: #2c3e50;
+            min-width: 44px;
+            font-size: 14px;
+        }
+
+        tr.add-row td {
+            background: #fdfdfd;
+        }
+
+        tr.add-row.disabled-row td {
+            opacity: .3;
+        }
+
+        tr.none-row td {
+            background: #fafafa;
+        }
+
+        .btn-reset {
+            display: block;
+            margin: 40px auto;
+            padding: 14px 40px;
+            background: #ffffff;
+            color: #555858;
+            border: 1px solid #e2e7ea;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-reset:hover {
+            background: #f3f5f4;
+            border-color: #d1d8dc;
+        }
+
+        .ad-space {
+            background: #f8f9fa;
+            border: 1px dashed #d1d8dc;
+            text-align: center;
+            padding: 30px 10px;
+            color: #878c8c;
+            font-size: 13px;
+            border-radius: 8px;
+            margin: 40px auto;
+        }
+
+        /* 52点リンク */
+        .link-52-container {
+            margin-top: -10px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .link-52-box {
+            display: block;
+            background: #2d7cbc;
+            color: white;
+            text-decoration: none;
+            padding: 14px 24px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: background 0.3s;
+            box-shadow: 0 4px 12px rgba(45, 124, 188, 0.2);
+        }
+
+        .link-52-box:hover {
+            background: #236194;
+        }
+
+        @media (max-width: 600px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .container {
+                padding: 16px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            .score-bar {
+                top: 110px;
+                padding: 8px;
+            }
+
+            .sbox {
+                padding: 10px;
+                min-width: 90px;
+            }
+
+            .sbox .pts {
+                font-size: 24px;
+            }
+
+            table {
+                font-size: 11px;
+            }
+
+            table th,
+            table td {
+                padding: 8px 4px;
+            }
+        }
+
+        .site-footer {
+            background: #f8f9fa;
+            border-top: 1px solid #e2e7ea;
+            padding: 24px 16px;
+            text-align: center;
+            margin: 40px -24px -24px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #878c8c;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #2d7cbc;
+        }
+
+        .footer-copy {
+            color: #aaa;
+            font-size: 11px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- サイト全体のヘッダー -->
+    <header class="app-header">
+        <div class="header-inner">
+            <a href="index" class="site-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                    <line x1="9" y1="9" x2="9.01" y2="9" />
+                    <line x1="15" y1="9" x2="15.01" y2="9" />
+                </svg>世田谷保育ナビ</a>
+            <nav class="header-nav">
+                <a href="guide"><svg width="14" height="14" style="vertical-align:-2px;margin-right:2px;"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                    </svg>初めてガイド</a>
+                <a href="criteria" class="active"><svg width="14" height="14"
+                        style="vertical-align:-2px;margin-right:2px;" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
+                        <line x1="8" y1="6" x2="16" y2="6" />
+                        <line x1="16" y1="14" x2="16" y2="14.01" />
+                        <line x1="12" y1="14" x2="12" y2="14.01" />
+                        <line x1="8" y1="14" x2="8" y2="14.01" />
+                        <line x1="16" y1="10" x2="16" y2="10.01" />
+                        <line x1="12" y1="10" x2="12" y2="10.01" />
+                        <line x1="8" y1="10" x2="8" y2="10.01" />
+                        <line x1="16" y1="18" x2="16" y2="18.01" />
+                        <line x1="12" y1="18" x2="12" y2="18.01" />
+                        <line x1="8" y1="18" x2="8" y2="18.01" />
+                    </svg>点数計算</a>
+                <a href="index"><svg width="14" height="14" style="vertical-align:-2px;margin-right:2px;"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>空き状況</a>
+                <a href="review"><svg width="14" height="14" style="vertical-align:-2px;margin-right:2px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>見学レポート</a>
+                <a href="column"><svg width="14" height="14" style="vertical-align:-2px;margin-right:2px;"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>コラム</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>選考ポイント計算ツール</h1>
+        <p class="subtitle">世田谷区の保育施設利用調整基準表（令和7年度版等）に基づくシミュレーター</p>
+
+        <div class="notice">
+            <svg width="16" height="16" style="margin-right:4px;vertical-align:-2px;color:#2d7cbc;" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="8" x2="12" y2="12" />
+                <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg><b>ご注意</b><br>
+            本シミュレーターに基づく点数は参考値であり、実際の利用調整結果を保証するものではありません。正式な評価については区役所窓口へお問い合わせください。
+        </div>
+
+        <div class="score-bar">
+            <div class="sbox">
+                <div class="lbl">父の指数合計</div>
+                <div class="pts" id="d-total">0</div>
+                <div style="font-size:11px;color:#878c8c">点</div>
+            </div>
+            <div class="sbox mom">
+                <div class="lbl">母の指数合計</div>
+                <div class="pts" id="m-total">0</div>
+                <div style="font-size:11px;color:#878c8c">点</div>
+            </div>
+            <div class="sbox total">
+                <div class="lbl">世帯合計指数</div>
+                <div class="pts" id="f-total">0</div>
+                <div style="font-size:11px;color:#878c8c">点</div>
+            </div>
+        </div>
+
+        <div class="link-52-container">
+            <a href="article_52points" class="link-52-box">
+                <svg width="16" height="16" style="vertical-align:-2px;margin-right:4px;" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                </svg>
+                「世帯合計52点」のボーダーライン解説を読む
+            </a>
+        </div>
+
+        <!-- ================= 基本指数 ================= -->
+        <h2 class="sec">【基本指数】各区分から該当するものを選択</h2>
+        <p class="note">※各区分（①〜⑧）は独立していて複数選択できます。区分内はいずれか1つ選択してください。「選択なし」がデフォルトです（0点）。</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th class="th-cat" rowspan="2" style="width:34%">区　分</th>
+                    <th class="th-dad" colspan="2">父の状況</th>
+                    <th class="th-mom" colspan="2">母の状況</th>
+                </tr>
+                <tr>
+                    <th class="th-dad" style="width:9%">選択</th>
+                    <th class="th-dad" style="width:8%">基本指数</th>
+                    <th class="th-mom" style="width:9%">選択</th>
+                    <th class="th-mom" style="width:8%">基本指数</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- ① 就労・採用予定 -->
+                <tr class="cat">
+                    <td colspan="5">① 就労・採用予定（月間就労時間から1つ選択。加算指数なし）</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:20px">160時間以上</td>
+                    <td class="rc"><input type="radio" name="db-1" value="26" onchange="update()"></td>
+                    <td class="sd">26</td>
+                    <td class="rc"><input type="radio" name="mb-1" value="26" class="mom" onchange="update()"></td>
+                    <td class="sm">26</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:20px">140〜160時間未満</td>
+                    <td class="rc"><input type="radio" name="db-1" value="24" onchange="update()"></td>
+                    <td class="sd">24</td>
+                    <td class="rc"><input type="radio" name="mb-1" value="24" class="mom" onchange="update()"></td>
+                    <td class="sm">24</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:20px">120〜140時間未満</td>
+                    <td class="rc"><input type="radio" name="db-1" value="22" onchange="update()"></td>
+                    <td class="sd">22</td>
+                    <td class="rc"><input type="radio" name="mb-1" value="22" class="mom" onchange="update()"></td>
+                    <td class="sm">22</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:20px">100〜120時間未満</td>
+                    <td class="rc"><input type="radio" name="db-1" value="20" onchange="update()"></td>
+                    <td class="sd">20</td>
+                    <td class="rc"><input type="radio" name="mb-1" value="20" class="mom" onchange="update()"></td>
+                    <td class="sm">20</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:20px">80〜100時間未満</td>
+                    <td class="rc"><input type="radio" name="db-1" value="18" onchange="update()"></td>
+                    <td class="sd">18</td>
+                    <td class="rc"><input type="radio" name="mb-1" value="18" class="mom" onchange="update()"></td>
+                    <td class="sm">18</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:20px">64〜80時間未満</td>
+                    <td class="rc"><input type="radio" name="db-1" value="17" onchange="update()"></td>
+                    <td class="sd">17</td>
+                    <td class="rc"><input type="radio" name="mb-1" value="17" class="mom" onchange="update()"></td>
+                    <td class="sm">17</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:20px">採用予定（生計中心者・保育士等優先利用希望者を除く）</td>
+                    <td class="rc"><input type="radio" name="db-1" value="15" onchange="update()"></td>
+                    <td class="sd">15</td>
+                    <td class="rc"><input type="radio" name="mb-1" value="15" class="mom" onchange="update()"></td>
+                    <td class="sm">15</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:20px">内職</td>
+                    <td class="rc"><input type="radio" name="db-1" value="16" onchange="update()"></td>
+                    <td class="sd">16</td>
+                    <td class="rc"><input type="radio" name="mb-1" value="16" class="mom" onchange="update()"></td>
+                    <td class="sm">16</td>
+                </tr>
+                <tr style="display:none">
+                    <td><input type="radio" name="db-1" value="0" id="db1-none" checked><input type="radio" name="mb-1"
+                            value="0" id="mb1-none" checked></td>
+                </tr>
+
+                <!-- ② 求職中・起業準備（①とは独立した区分） -->
+                <tr class="cat">
+                    <td colspan="5">② 求職中・起業準備（①とは別の区分として選択可。加算指数あり）</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:20px">求職中・起業準備</td>
+                    <td class="rc"><input type="radio" name="db-2" value="10" data-type="kyushoku" id="db-kyushoku"
+                            onchange="update()"></td>
+                    <td class="sd">10</td>
+                    <td class="rc"><input type="radio" name="mb-2" value="10" data-type="kyushoku" id="mb-kyushoku"
+                            class="mom" onchange="update()"></td>
+                    <td class="sm">10</td>
+                </tr>
+                <tr style="display:none">
+                    <td><input type="radio" name="db-2" value="0" id="db2-none" checked><input type="radio" name="mb-2"
+                            value="0" id="mb2-none" checked></td>
+                </tr>
+
+                <!-- 求職中の加算（倒産・解雇） -->
+                <tr class="add-row" id="row-toasan">
+                    <td style="padding-left:36px;color:#b7770d">
+                        ＋ 加算：倒産・解雇による離職<br>
+                        <span style="font-size:11px;color:#888">※求職中・起業準備を選択した場合のみ有効</span>
+                    </td>
+                    <td class="rc"><input type="checkbox" id="d-toasan" value="5" disabled onchange="calc()"></td>
+                    <td class="sa">+5</td>
+                    <td class="rc"><input type="checkbox" id="m-toasan" value="5" disabled onchange="calc()"></td>
+                    <td class="sa">+5</td>
+                </tr>
+
+                <!-- 求職中の加算（生計中心者） -->
+                <tr class="add-row" id="row-seikei">
+                    <td style="padding-left:36px;color:#b7770d">
+                        ＋ 加算：生計中心者<br>
+                        <span style="font-size:11px;color:#888">※求職中を選択した方のみ有効。父か母どちらか1人のみ選択可</span>
+                    </td>
+                    <td class="rc"><input type="radio" name="seikei" id="seikei-dad" value="dad" disabled
+                            onchange="calc()"></td>
+                    <td class="sa">+3</td>
+                    <td class="rc"><input type="radio" name="seikei" id="seikei-mom" value="mom" disabled
+                            onchange="calc()"></td>
+                    <td class="sa">+3</td>
+                </tr>
+                <!-- 生計中心者の「なし」選択（hidden but needed for reset） -->
+                <tr style="display:none">
+                    <td><input type="radio" name="seikei" id="seikei-none" value="none" checked></td>
+                </tr>
+
+                <!-- ③ 出産予定 -->
+                <tr class="cat">
+                    <td colspan="5">③ 出産予定（母のみ該当）</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:20px">出産予定</td>
+                    <td class="stripe">―</td>
+                    <td class="stripe">父は不可</td>
+                    <td class="rc"><input type="radio" name="mb-3" value="33" class="mom" onchange="update()"></td>
+                    <td class="sm">33</td>
+                </tr>
+                <tr style="display:none">
+                    <td><input type="radio" name="mb-3" value="0" id="mb3-none" checked></td>
+                </tr>
+
+                <!-- ④ 疾病 -->
+                <tr class="cat">
+                    <td colspan="5">④ 疾病（本人）（基本指数20点 ＋ 下記加算指数のいずれかを選択）</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:20px">疾病（基本）</td>
+                    <td class="rc"><input type="radio" name="db-4" value="20s" data-type="shippei" id="db-shippei"
+                            onchange="update()"></td>
+                    <td class="sd">20</td>
+                    <td class="rc"><input type="radio" name="mb-4" value="20s" data-type="shippei" id="mb-shippei"
+                            class="mom" onchange="update()"></td>
+                    <td class="sm">20</td>
+                </tr>
+                <tr class="add-row" id="row-shippei-d-heavy" style="display:none">
+                    <td style="padding-left:36px;color:#b7770d">＋ 加算：入院（1ヶ月以上）・常時臥床・指定難病</td>
+                    <td class="rc"><input type="radio" name="d-shippei-adj" value="13" id="d-shippei-heavy"
+                            onchange="calc()"></td>
+                    <td class="sa">+13</td>
+                    <td class="rc"><input type="radio" name="m-shippei-adj" value="13" id="m-shippei-heavy"
+                            onchange="calc()"></td>
+                    <td class="sa">+13</td>
+                </tr>
+                <tr class="add-row" id="row-shippei-d-other" style="display:none">
+                    <td style="padding-left:36px;color:#b7770d">＋ 加算：上記以外の疾病</td>
+                    <td class="rc"><input type="radio" name="d-shippei-adj" value="6" id="d-shippei-other"
+                            onchange="calc()"></td>
+                    <td class="sa">+6</td>
+                    <td class="rc"><input type="radio" name="m-shippei-adj" value="6" id="m-shippei-other"
+                            onchange="calc()"></td>
+                    <td class="sa">+6</td>
+                </tr>
+                <tr class="add-row" id="row-shippei-none" style="display:none">
+                    <td colspan="5" style="display:none"><input type="radio" name="d-shippei-adj" value="0"
+                            id="d-shippei-none" checked><input type="radio" name="m-shippei-adj" value="0"
+                            id="m-shippei-none" checked></td>
+                </tr>
+                <tr style="display:none">
+                    <td><input type="radio" name="db-4" value="0" id="db4-none" checked><input type="radio" name="mb-4"
+                            value="0" id="mb4-none" checked></td>
+                </tr>
+
+                <!-- ⑤ 障害 -->
+                <tr class="cat">
+                    <td colspan="5">⑤ 障害（身体・知的・精神のいずれか1区分から1つ選択）</td>
+                </tr>
+                <tr class="subcat">
+                    <td colspan="5">▸ 身体障害</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:36px">1・2級</td>
+                    <td class="rc"><input type="radio" name="db-5" value="20" onchange="update()"></td>
+                    <td class="sd">20</td>
+                    <td class="rc"><input type="radio" name="mb-5" value="20" class="mom" onchange="update()"></td>
+                    <td class="sm">20</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:36px">3級</td>
+                    <td class="rc"><input type="radio" name="db-5" value="13" onchange="update()"></td>
+                    <td class="sd">13</td>
+                    <td class="rc"><input type="radio" name="mb-5" value="13" class="mom" onchange="update()"></td>
+                    <td class="sm">13</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:36px">上記以外</td>
+                    <td class="rc"><input type="radio" name="db-5" value="6" onchange="update()"></td>
+                    <td class="sd">6</td>
+                    <td class="rc"><input type="radio" name="mb-5" value="6" class="mom" onchange="update()"></td>
+                    <td class="sm">6</td>
+                </tr>
+                <tr class="subcat">
+                    <td colspan="5">▸ 知的障害（療育手帳）</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:36px">Ⓐ・A・B</td>
+                    <td class="rc"><input type="radio" name="db-5" value="20" onchange="update()"></td>
+                    <td class="sd">20</td>
+                    <td class="rc"><input type="radio" name="mb-5" value="20" class="mom" onchange="update()"></td>
+                    <td class="sm">20</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:36px">C</td>
+                    <td class="rc"><input type="radio" name="db-5" value="13" onchange="update()"></td>
+                    <td class="sd">13</td>
+                    <td class="rc"><input type="radio" name="mb-5" value="13" class="mom" onchange="update()"></td>
+                    <td class="sm">13</td>
+                </tr>
+                <tr class="subcat">
+                    <td colspan="5">▸ 精神障害（精神障害者保健福祉手帳）</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:36px">1・2級</td>
+                    <td class="rc"><input type="radio" name="db-5" value="20" onchange="update()"></td>
+                    <td class="sd">20</td>
+                    <td class="rc"><input type="radio" name="mb-5" value="20" class="mom" onchange="update()"></td>
+                    <td class="sm">20</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:36px">3級</td>
+                    <td class="rc"><input type="radio" name="db-5" value="13" onchange="update()"></td>
+                    <td class="sd">13</td>
+                    <td class="rc"><input type="radio" name="mb-5" value="13" class="mom" onchange="update()"></td>
+                    <td class="sm">13</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:36px">上記以外</td>
+                    <td class="rc"><input type="radio" name="db-5" value="6" onchange="update()"></td>
+                    <td class="sd">6</td>
+                    <td class="rc"><input type="radio" name="mb-5" value="6" class="mom" onchange="update()"></td>
+                    <td class="sm">6</td>
+                </tr>
+                <tr style="display:none">
+                    <td><input type="radio" name="db-5" value="0" id="db5-none" checked><input type="radio" name="mb-5"
+                            value="0" id="mb5-none" checked></td>
+                </tr>
+
+                <!-- ⑥ 介護・看護 -->
+                <tr class="cat">
+                    <td colspan="5">⑥ 介護・看護（1つ選択）</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:20px">常時臥床の親族の看護（週5日以上）・要介護3〜5</td>
+                    <td class="rc"><input type="radio" name="db-6" value="20" onchange="update()"></td>
+                    <td class="sd">20</td>
+                    <td class="rc"><input type="radio" name="mb-6" value="20" class="mom" onchange="update()"></td>
+                    <td class="sm">20</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:20px">週4日以上・要介護2</td>
+                    <td class="rc"><input type="radio" name="db-6" value="8" onchange="update()"></td>
+                    <td class="sd">8</td>
+                    <td class="rc"><input type="radio" name="mb-6" value="8" class="mom" onchange="update()"></td>
+                    <td class="sm">8</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:20px">要介護1・上記以外</td>
+                    <td class="rc"><input type="radio" name="db-6" value="4" onchange="update()"></td>
+                    <td class="sd">4</td>
+                    <td class="rc"><input type="radio" name="mb-6" value="4" class="mom" onchange="update()"></td>
+                    <td class="sm">4</td>
+                </tr>
+                <tr style="display:none">
+                    <td><input type="radio" name="db-6" value="0" id="db6-none" checked><input type="radio" name="mb-6"
+                            value="0" id="mb6-none" checked></td>
+                </tr>
+
+                <!-- ⑦ 就学 -->
+                <tr class="cat">
+                    <td colspan="5">⑦ 就学（1つ選択）</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:20px">就学中</td>
+                    <td class="rc"><input type="radio" name="db-7" value="18" onchange="update()"></td>
+                    <td class="sd">18</td>
+                    <td class="rc"><input type="radio" name="mb-7" value="18" class="mom" onchange="update()"></td>
+                    <td class="sm">18</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:20px">就学予定</td>
+                    <td class="rc"><input type="radio" name="db-7" value="11" onchange="update()"></td>
+                    <td class="sd">11</td>
+                    <td class="rc"><input type="radio" name="mb-7" value="11" class="mom" onchange="update()"></td>
+                    <td class="sm">11</td>
+                </tr>
+                <tr style="display:none">
+                    <td><input type="radio" name="db-7" value="0" id="db7-none" checked><input type="radio" name="mb-7"
+                            value="0" id="mb7-none" checked></td>
+                </tr>
+
+                <!-- ⑧ 不存在 -->
+                <tr class="cat">
+                    <td colspan="5">⑧ 不存在（ひとり親・別居等／選択するともう一方の合計指数は無効になります）</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:20px">別居・不存在</td>
+                    <td class="rc"><input type="radio" name="db-8" value="60" data-type="fuzai" onchange="update()">
+                    </td>
+                    <td class="sd">60</td>
+                    <td class="rc"><input type="radio" name="mb-8" value="60" data-type="fuzai" class="mom"
+                            onchange="update()"></td>
+                    <td class="sm">60</td>
+                </tr>
+                <tr style="display:none">
+                    <td><input type="radio" name="db-8" value="0" id="db8-none" checked><input type="radio" name="mb-8"
+                            value="0" id="mb8-none" checked></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- ===== 調整指数①②（世帯全体） ===== -->
+        <h2 class="sec">【調整指数①】申込み児童の現在の保育状況（複数選択可）</h2>
+        <p class="note">※申込み児童が現在どのような保育を受けているか、該当するものをすべて選択してください。</p>
+        <table>
+            <thead>
+                <tr>
+                    <th class="th-cat" colspan="2" style="width:75%">区　分</th>
+                    <th class="th-adj" style="width:12%">選択</th>
+                    <th class="th-adj" style="width:10%">指数</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 委託 -->
+                <tr style="background:#f0f4ff">
+                    <td rowspan="7"
+                        style="font-weight:bold;background:#dce8ff;text-align:center;width:6%;font-size:12px;padding:4px;">
+                        委<br>託</td>
+                    <td>認可保育所、認定こども園（保育所部分）または特定地域型保育事業を利用中</td>
+                    <td class="rc"><input type="checkbox" class="adj1-cb" value="5" onchange="calc()"></td>
+                    <td class="sa">+5</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:4px">幼稚園に通園中</td>
+                    <td class="rc"><input type="checkbox" class="adj1-cb" value="7" onchange="calc()"></td>
+                    <td class="sa">+7</td>
+                </tr>
+                <tr style="background:#f0f4ff">
+                    <td style="padding-left:4px">家庭保育室に委託中（ベビーシッター等含む）</td>
+                    <td class="rc"><input type="checkbox" class="adj1-cb" value="7" onchange="calc()"></td>
+                    <td class="sa">+7</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:4px">ナーサリールームその他の認可外保育施設に委託中</td>
+                    <td class="rc"><input type="checkbox" class="adj1-cb" value="7" onchange="calc()"></td>
+                    <td class="sa">+7</td>
+                </tr>
+                <tr style="background:#f0f4ff">
+                    <td style="padding-left:4px">保育施設の一時保育を利用中</td>
+                    <td class="rc"><input type="checkbox" class="adj1-cb" value="7" onchange="calc()"></td>
+                    <td class="sa">+7</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:4px">事業所内保育施設に委託中</td>
+                    <td class="rc"><input type="checkbox" class="adj1-cb" value="7" onchange="calc()"></td>
+                    <td class="sa">+7</td>
+                </tr>
+                <tr style="background:#f0f4ff">
+                    <td style="padding-left:4px">養護施設等に入所中</td>
+                    <td class="rc"><input type="checkbox" class="adj1-cb" value="15" onchange="calc()"></td>
+                    <td class="sa">+15</td>
+                </tr>
+                <!-- 保護者が保育 -->
+                <tr>
+                    <td rowspan="4"
+                        style="font-weight:bold;background:#dce8ff;text-align:center;font-size:12px;padding:4px;">
+                        保護者<br>が保育</td>
+                    <td>自宅にて保育</td>
+                    <td class="rc"><input type="checkbox" class="adj1-cb" value="2" onchange="calc()"></td>
+                    <td class="sa">+2</td>
+                </tr>
+                <tr style="background:#f0f4ff">
+                    <td style="padding-left:4px">自宅外にて保育</td>
+                    <td class="rc"><input type="checkbox" class="adj1-cb" value="3" onchange="calc()"></td>
+                    <td class="sa">+3</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:4px">育児休業中・産前産後休暇中</td>
+                    <td class="rc"><input type="checkbox" class="adj1-cb" value="6" onchange="calc()"></td>
+                    <td class="sa">+6</td>
+                </tr>
+                <tr style="background:#f0f4ff">
+                    <td style="padding-left:4px;font-size:12px">
+                        認可保育所等を利用していたが、保護者が下の子の育児休業取得に伴い自主退所した児童の再入所申込みおよび同時申込みの兄弟姉妹</td>
+                    <td class="rc"><input type="checkbox" class="adj1-cb" value="11" onchange="calc()"></td>
+                    <td class="sa">+11</td>
+                </tr>
+                <!-- 保護者以外が保育 -->
+                <tr>
+                    <td rowspan="2"
+                        style="font-weight:bold;background:#dce8ff;text-align:center;font-size:12px;padding:4px;">
+                        保護者<br>以外が<br>保育</td>
+                    <td>祖父母・その他の親族が保育</td>
+                    <td class="rc"><input type="checkbox" class="adj1-cb" value="3" onchange="calc()"></td>
+                    <td class="sa">+3</td>
+                </tr>
+                <tr style="background:#f0f4ff">
+                    <td style="padding-left:4px">知人が保育</td>
+                    <td class="rc"><input type="checkbox" class="adj1-cb" value="4" onchange="calc()"></td>
+                    <td class="sa">+4</td>
+                </tr>
+                <!-- 勤務先にて -->
+                <tr>
+                    <td colspan="2" style="font-weight:bold">勤務先にて保育</td>
+                    <td class="rc"><input type="checkbox" class="adj1-cb" value="5" onchange="calc()"></td>
+                    <td class="sa">+5</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="sec">【調整指数②】加算状況（複数選択可）</h2>
+        <p class="note">※該当するものすべてにチェックしてください。</p>
+        <table>
+            <thead>
+                <tr>
+                    <th class="th-cat" colspan="2" style="width:75%">区　分</th>
+                    <th class="th-adj" style="width:12%">選択</th>
+                    <th class="th-adj" style="width:10%">指数</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2">市内の乳幼児保育所・地域型保育事業所・定期保育　卒園児</td>
+                    <td class="rc"><input type="checkbox" id="a2-sotsu" value="5" onchange="calc()"></td>
+                    <td class="sa">+5</td>
+                </tr>
+                <!-- 転園 -->
+                <tr>
+                    <td rowspan="6"
+                        style="font-weight:bold;background:#dce8ff;text-align:center;font-size:12px;padding:4px;">転<br>園
+                    </td>
+                    <td>転居・勤務地の変更</td>
+                    <td class="rc"><input type="checkbox" id="a2-ten1" value="2" onchange="calc()"></td>
+                    <td class="sa">+2</td>
+                </tr>
+                <tr style="background:#f0f4ff">
+                    <td style="padding-left:4px">在園施設の移転・廃止・統合・民営化</td>
+                    <td class="rc"><input type="checkbox" id="a2-ten2" value="2" onchange="calc()"></td>
+                    <td class="sa">+2</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:4px">兄弟姉妹が在園する保育施設への転園</td>
+                    <td class="rc"><input type="checkbox" id="a2-ten3" value="2" onchange="calc()"></td>
+                    <td class="sa">+2</td>
+                </tr>
+                <tr style="background:#f0f4ff">
+                    <td style="padding-left:4px">市外委託先から市内保育施設への転園</td>
+                    <td class="rc"><input type="checkbox" id="a2-ten4" value="2" onchange="calc()"></td>
+                    <td class="sa">+2</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:4px">市外からの転入予定で、現在居住地の認可保育施設在園の新規申込み</td>
+                    <td class="rc"><input type="checkbox" id="a2-ten5" value="2" onchange="calc()"></td>
+                    <td class="sa">+2</td>
+                </tr>
+                <tr style="background:#f0f4ff">
+                    <td style="padding-left:4px">在園施設の廃止により弟妹が同一園希望不可</td>
+                    <td class="rc"><input type="checkbox" id="a2-ten6" value="2" onchange="calc()"></td>
+                    <td class="sa">+2</td>
+                </tr>
+                <tr>
+                    <td colspan="2">生活保護等受給世帯</td>
+                    <td class="rc"><input type="checkbox" id="a2-seika" value="5" onchange="calc()"></td>
+                    <td class="sa">+5</td>
+                </tr>
+                <tr style="background:#f0f4ff">
+                    <td colspan="2">単身赴任中</td>
+                    <td class="rc"><input type="checkbox" id="a2-tanshin" value="4" onchange="calc()"></td>
+                    <td class="sa">+4</td>
+                </tr>
+                <tr>
+                    <td colspan="2">保護者に、主たる事由以外に1つ以上要件を満たす事由あり（条件あり）</td>
+                    <td class="rc"><input type="checkbox" id="a2-fukuji" value="1" onchange="calc()"></td>
+                    <td class="sa">+1</td>
+                </tr>
+                <tr style="background:#f0f4ff">
+                    <td colspan="2">保護者が保育士・保育教諭または保育士としてみなす保健師・看護師・准看護師で、市内保育施設または幼稚園に勤務中または採用予定</td>
+                    <td class="rc"><input type="checkbox" id="a2-hoiku" value="9" onchange="calc()"></td>
+                    <td class="sa">+9</td>
+                </tr>
+                <!-- 兄弟姉妹 -->
+                <tr>
+                    <td rowspan="5"
+                        style="font-weight:bold;background:#dce8ff;text-align:center;font-size:12px;padding:4px;">
+                        兄弟<br>姉妹</td>
+                    <td>障害児あり</td>
+                    <td class="rc"><input type="checkbox" id="a2-shogai" value="3" onchange="calc()"></td>
+                    <td class="sa">+3</td>
+                </tr>
+                <tr style="background:#f0f4ff">
+                    <td style="padding-left:4px">未就学児童あり　かつ　同一園を第一希望とするもの</td>
+                    <td class="rc"><input type="checkbox" id="a2-miju1" value="3" onchange="calc()"></td>
+                    <td class="sa">+3</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:4px">未就学児童あり　かつ　上記以外</td>
+                    <td class="rc"><input type="checkbox" id="a2-miju2" value="2" onchange="calc()"></td>
+                    <td class="sa">+2</td>
+                </tr>
+                <tr style="background:#f0f4ff">
+                    <td style="padding-left:4px">未就学児童なしで、小4までの就学児童あり</td>
+                    <td class="rc"><input type="checkbox" id="a2-miju3" value="1" onchange="calc()"></td>
+                    <td class="sa">+1</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:4px">兄弟姉妹3人以上家庭（3人目以降人数につき1点）</td>
+                    <td class="rc"><input type="checkbox" id="a2-k3" value="1" onchange="calc()"></td>
+                    <td class="sa">+1/人</td>
+                </tr>
+                <!-- 祖父母 -->
+                <tr style="background:#f0f4ff">
+                    <td rowspan="2"
+                        style="font-weight:bold;background:#dce8ff;text-align:center;font-size:12px;padding:4px;">
+                        父方<br>祖父</td>
+                    <td>同居（65歳以上または保育ができない理由あり）</td>
+                    <td class="rc"><input type="checkbox" id="a2-fg1" value="1" onchange="calc()"></td>
+                    <td class="sa">+1</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:4px">別居・不存在</td>
+                    <td class="rc"><input type="checkbox" id="a2-fg2" value="1" onchange="calc()"></td>
+                    <td class="sa">+1</td>
+                </tr>
+                <tr style="background:#f0f4ff">
+                    <td rowspan="2"
+                        style="font-weight:bold;background:#dce8ff;text-align:center;font-size:12px;padding:4px;">
+                        父方<br>祖母</td>
+                    <td>同居（65歳以上または保育ができない理由あり）</td>
+                    <td class="rc"><input type="checkbox" id="a2-fg3" value="1" onchange="calc()"></td>
+                    <td class="sa">+1</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:4px">別居・不存在</td>
+                    <td class="rc"><input type="checkbox" id="a2-fg4" value="1" onchange="calc()"></td>
+                    <td class="sa">+1</td>
+                </tr>
+                <tr style="background:#f0f4ff">
+                    <td rowspan="2"
+                        style="font-weight:bold;background:#dce8ff;text-align:center;font-size:12px;padding:4px;">
+                        母方<br>祖父</td>
+                    <td>同居（65歳以上または保育ができない理由あり）</td>
+                    <td class="rc"><input type="checkbox" id="a2-mg1" value="1" onchange="calc()"></td>
+                    <td class="sa">+1</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:4px">別居・不存在</td>
+                    <td class="rc"><input type="checkbox" id="a2-mg2" value="1" onchange="calc()"></td>
+                    <td class="sa">+1</td>
+                </tr>
+                <tr style="background:#f0f4ff">
+                    <td rowspan="2"
+                        style="font-weight:bold;background:#dce8ff;text-align:center;font-size:12px;padding:4px;">
+                        母方<br>祖母</td>
+                    <td>同居（65歳以上または保育ができない理由あり）</td>
+                    <td class="rc"><input type="checkbox" id="a2-mg3" value="1" onchange="calc()"></td>
+                    <td class="sa">+1</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:4px">別居・不存在</td>
+                    <td class="rc"><input type="checkbox" id="a2-mg4" value="1" onchange="calc()"></td>
+                    <td class="sa">+1</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="note" style="margin-top:4px;">
+            ※各区分の詳細・条件は世田谷区の正式な基準表を必ずご確認ください。<br>
+            ※不存在（60点）を選択した場合、もう一方の親の指数は0点扱いになります。<br>
+            ※同合計指数の場合は「状況別優先順位表」の順により、前年度市民税所得割額の低い世帯から選考されます。
+        </p>
+        <button class="btn-reset" onclick="resetAll()">🔄 すべてリセット</button>
+
+        <footer class="site-footer">
+            <div class="footer-links">
+                <a href="about">運営者情報</a>
+                <a href="privacy">プライバシーポリシー</a>
+                <a href="contact">お問い合わせ</a>
+            </div>
+            <p class="footer-source" style="font-size:11px;color:#aaa;margin:0 0 8px;">データ出典：世田谷区公式「<a href="https://www.city.saitama.lg.jp/006/007/005/002/p001061.html" target="_blank" rel="noopener noreferrer" style="color:#999;text-decoration:underline;">保育施設等の空き状況</a>」をもとに毎月更新</p>
+                <p class="footer-copy">&copy; 2026 世田谷保育ナビ｜運営：√4（ルートフォー）</p>
+        </footer>
+    </div>
+
+    <script>
+        // =============================================
+        // 条件付き表示・有効化の制御
+        // =============================================
+        // 各区分グループ名リスト
+        const DAD_GROUPS = ['db-1', 'db-2', 'db-4', 'db-5', 'db-6', 'db-7', 'db-8'];
+        const MOM_GROUPS = ['mb-1', 'mb-2', 'mb-3', 'mb-4', 'mb-5', 'mb-6', 'mb-7', 'mb-8'];
+
+        function update() {
+            const dbKyuEl = document.querySelector('input[name="db-2"]:checked');
+            const mbKyuEl = document.querySelector('input[name="mb-2"]:checked');
+            const dbShipEl = document.querySelector('input[name="db-4"]:checked');
+            const mbShipEl = document.querySelector('input[name="mb-4"]:checked');
+
+            // ---- 求職中チェック ----
+            const dKyu = dbKyuEl && dbKyuEl.dataset.type === 'kyushoku';
+            const mKyu = mbKyuEl && mbKyuEl.dataset.type === 'kyushoku';
+
+            // 倒産・解雇（各親が求職中の時のみ有効）
+            const dToasan = document.getElementById('d-toasan');
+            const mToasan = document.getElementById('m-toasan');
+            dToasan.disabled = !dKyu;
+            if (!dKyu) dToasan.checked = false;
+            mToasan.disabled = !mKyu;
+            if (!mKyu) mToasan.checked = false;
+
+            // 生計中心者ラジオ（求職中の親のみ選択可）
+            const sdad = document.getElementById('seikei-dad');
+            const smom = document.getElementById('seikei-mom');
+            sdad.disabled = !dKyu;
+            smom.disabled = !mKyu;
+            // 選択中の親が求職中でなくなった場合はリセット
+            const seikeiChecked = document.querySelector('input[name="seikei"]:checked');
+            if (seikeiChecked) {
+                if (seikeiChecked.id === 'seikei-dad' && !dKyu) document.getElementById('seikei-none').checked = true;
+                if (seikeiChecked.id === 'seikei-mom' && !mKyu) document.getElementById('seikei-none').checked = true;
+            }
+
+            // 加算行の視覚的有効/無効
+            document.getElementById('row-toasan').classList.toggle('disabled-row', !dKyu && !mKyu);
+            document.getElementById('row-seikei').classList.toggle('disabled-row', !dKyu && !mKyu);
+
+            // ---- 疾病 加算行の表示切り替え ----
+            const dShippei = dbShipEl && dbShipEl.dataset.type === 'shippei';
+            const mShippei = mbShipEl && mbShipEl.dataset.type === 'shippei';
+            const showShippei = dShippei || mShippei;
+            ['row-shippei-d-heavy', 'row-shippei-d-other', 'row-shippei-none'].forEach(id => {
+                document.getElementById(id).style.display = showShippei ? '' : 'none';
+            });
+            if (!dShippei) {
+                document.getElementById('d-shippei-none').checked = true;
+            }
+            if (!mShippei) {
+                document.getElementById('m-shippei-none').checked = true;
+            }
+            // 疾病の各加算ラジオを有効/無効
+            document.getElementById('d-shippei-heavy').disabled = !dShippei;
+            document.getElementById('d-shippei-other').disabled = !dShippei;
+            document.getElementById('m-shippei-heavy').disabled = !mShippei;
+            document.getElementById('m-shippei-other').disabled = !mShippei;
+
+            calc();
+        }
+
+        // =============================================
+        // 点数計算
+        // =============================================
+        function calc() {
+            // 各区分の選択値を合算
+            function sumGroups(groups) {
+                let total = 0;
+                groups.forEach(gname => {
+                    const el = document.querySelector(`input[name="${gname}"]:checked`);
+                    if (el) {
+                        const v = el.value === '20s' ? 20 : parseInt(el.value) || 0;
+                        total += v;
+                    }
+                });
+                return total;
+            }
+
+            let dBase = sumGroups(DAD_GROUPS);
+            let mBase = sumGroups(MOM_GROUPS);
+
+            // 不存在の場合、もう一方は0
+            const db8Checked = document.querySelector('input[name="db-8"]:checked');
+            const mb8Checked = document.querySelector('input[name="mb-8"]:checked');
+            const dFuzai = db8Checked && db8Checked.dataset.type === 'fuzai';
+            const mFuzai = mb8Checked && mb8Checked.dataset.type === 'fuzai';
+            if (dFuzai) mBase = 0;
+            if (mFuzai) dBase = 0;
+
+            // 倒産・解雇加算
+            const dToasan = document.getElementById('d-toasan');
+            const mToasan = document.getElementById('m-toasan');
+            let dAdd = (!dToasan.disabled && dToasan.checked) ? 5 : 0;
+            let mAdd = (!mToasan.disabled && mToasan.checked) ? 5 : 0;
+
+            // 生計中心者加算（どちらかのみ）
+            const seikeiChecked = document.querySelector('input[name="seikei"]:checked');
+            if (seikeiChecked && seikeiChecked.value === 'dad') dAdd += 3;
+            if (seikeiChecked && seikeiChecked.value === 'mom') mAdd += 3;
+
+            // 疾病加算
+            const dSA = document.querySelector('input[name="d-shippei-adj"]:checked');
+            const mSA = document.querySelector('input[name="m-shippei-adj"]:checked');
+            if (dSA && !document.getElementById('d-shippei-heavy').disabled) dAdd += parseInt(dSA.value) || 0;
+            if (mSA && !document.getElementById('m-shippei-heavy').disabled) mAdd += parseInt(mSA.value) || 0;
+
+            // 調整指数①（チェックボックス・複数可・世帯全体）
+            let adj = 0;
+            document.querySelectorAll('.adj1-cb:checked').forEach(el => {
+                adj += parseInt(el.value) || 0;
+            });
+
+            // 調整指数②（チェックボックス・複数可）
+            ['a2-sotsu', 'a2-ten1', 'a2-ten2', 'a2-ten3', 'a2-ten4', 'a2-ten5', 'a2-ten6',
+                'a2-seika', 'a2-tanshin', 'a2-fukuji', 'a2-hoiku',
+                'a2-shogai', 'a2-miju1', 'a2-miju2', 'a2-miju3', 'a2-k3',
+                'a2-fg1', 'a2-fg2', 'a2-fg3', 'a2-fg4',
+                'a2-mg1', 'a2-mg2', 'a2-mg3', 'a2-mg4'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el && el.checked) adj += parseInt(el.value) || 0;
+                });
+
+            const dTotal = dBase + dAdd;
+            const mTotal = mBase + mAdd;
+            const fTotal = dTotal + mTotal + adj;
+
+            document.getElementById('d-total').textContent = dTotal;
+            document.getElementById('m-total').textContent = mTotal;
+            const fEl = document.getElementById('f-total');
+            fEl.textContent = fTotal;
+            fEl.style.color = fTotal > 52 ? '#27ae60' : fTotal === 52 ? '#27ae60' : fTotal >= 40 ? '#e67e22' : '#e74c3c';
+        }
+
+        // =============================================
+        // ラジオボタン再タップ時の選択解除処理 & セルのタップ対応
+        // =============================================
+        let currentChecked = {}; // { groupName: radioElement }
+
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            // 初期状態の記録
+            if (radio.checked) {
+                currentChecked[radio.name] = radio;
+            }
+
+            radio.addEventListener('click', function (e) {
+                const name = this.name;
+                if (currentChecked[name] === this) {
+                    // すでにチェックされているものを再度クリックした場合 -> 解除して、noneを選択
+                    this.checked = false;
+                    currentChecked[name] = null;
+                    const noneRadio = document.querySelector(`input[name="${name}"][value="0"]`) || document.querySelector(`input[name="${name}"][value="none"]`);
+                    if (noneRadio) noneRadio.checked = true;
+                    // changeイベントは自分で発火させるか、手動でupdate()を呼ぶ
+                    update();
+                } else {
+                    currentChecked[name] = this;
+                }
+            });
+        });
+
+        // ラジオやチェックボックスが入っているセル（td.rc）全体をタップできるようにする
+        document.querySelectorAll('td.rc').forEach(td => {
+            td.style.cursor = 'pointer';
+            td.addEventListener('click', function (e) {
+                // セル自体がクリックされたときのみ、内部のinputをクリックさせる
+                if (e.target.tagName.toLowerCase() !== 'input') {
+                    const input = this.querySelector('input');
+                    if (input) input.click();
+                }
+            });
+        });
+
+        function resetAll() {
+            // 基本指数グループをリセット
+            ['db-1', 'db-2', 'db-4', 'db-5', 'db-6', 'db-7', 'db-8'].forEach(g => {
+                const el = document.querySelector(`input[name="${g}"][value="0"]`);
+                if (el) {
+                    el.checked = true;
+                    currentChecked[g] = el;
+                }
+            });
+            ['mb-1', 'mb-2', 'mb-3', 'mb-4', 'mb-5', 'mb-6', 'mb-7', 'mb-8'].forEach(g => {
+                const el = document.querySelector(`input[name="${g}"][value="0"]`);
+                if (el) {
+                    el.checked = true;
+                    currentChecked[g] = el;
+                }
+            });
+            const noneSeikei = document.getElementById('seikei-none');
+            if (noneSeikei) { noneSeikei.checked = true; currentChecked['seikei'] = noneSeikei; }
+
+            // 疾病加算リセット
+            const dShipNone = document.getElementById('d-shippei-none');
+            const mShipNone = document.getElementById('m-shippei-none');
+            if (dShipNone) { dShipNone.checked = true; currentChecked['d-shippei-adj'] = dShipNone; }
+            if (mShipNone) { mShipNone.checked = true; currentChecked['m-shippei-adj'] = mShipNone; }
+
+            // 調整指数②チェックボックスリセット
+            document.querySelectorAll('input[type="checkbox"]').forEach(el => el.checked = false);
+            update();
+        }
+
+        // 初期化
+        update();
+    </script>
+</body>
+
+</html>

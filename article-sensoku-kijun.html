@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KK8KHXY1CK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-KK8KHXY1CK');
+gtag('event', 'article_view', { article_name: document.title });
+</script>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="世田谷区の保育園入園選考の仕組みを解説。基準指数・調整指数の計算方法、点数を上げるポイント、「52点の壁」について詳しく説明します。">
+    <meta name="keywords" content="保育園,選考基準,点数,指数,世田谷区,保活,52点">
+    <meta property="og:title" content="保育園の選考基準・点数の仕組み【世田谷区版】指数の計算方法">
+    <meta property="og:description" content="世田谷区の保育園入園選考の仕組みを解説。基準指数・調整指数の計算方法、点数を上げるポイント、「52点の壁」について詳しく説明します。">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://nursery.setagaya.root-for.jp/images/sensoku-kijun.webp">
+    <meta property="og:site_name" content="世田谷保育ナビ">
+    <link rel="canonical" href="https://nursery.setagaya.root-for.jp/article-sensoku-kijun">
+    <title>保育園の選考基準・点数の仕組み【世田谷区版】指数の計算方法｜世田谷保育ナビ</title>
+    <!-- 構造化データ（JSON-LD） -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "保育園の選考基準・点数の仕組み【世田谷区版】指数の計算方法",
+        "description": "世田谷区の保育園入園選考の仕組みを解説。基準指数・調整指数の計算方法、点数を上げるポイント、「52点の壁」について詳しく説明します。",
+        "author": { "@type": "Organization", "name": "世田谷保育ナビ" },
+        "publisher": { "@type": "Organization", "name": "世田谷保育ナビ" },
+        "mainEntityOfPage": { "@type": "WebPage" },
+        "datePublished": "2026-04-08",
+        "dateModified": "2026-04-08"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "トップ", "item": "https://nursery.setagaya.root-for.jp/" },
+            { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://nursery.setagaya.root-for.jp/column" },
+            { "@type": "ListItem", "position": 3, "name": "保育園の選考基準・点数の仕組み" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "世田谷区の保育園選考では何点あれば入れますか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "両親ともにフルタイム就労（月20日以上・週40時間以上）の場合、基準指数の合計は52点になります。これが多くの園で最低ラインとなりますが、人気の高い園では52点でも落ちるケースがあります。調整指数で加点を積み上げることが重要です。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "調整指数で点数を上げる方法はありますか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "主な加点方法として、兄弟を同じ園に申し込む（+3点）、認可外保育園に預けながら申請する（+2点）、育休明け復帰（+2点）などがあります。ひとり親家庭は+6点の加点があります。就労証明書の時間数を正確に記載することも大切です。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "同点の場合はどうなりますか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "世田谷区では同点の場合、優先順位（ひとり親・生活保護世帯、入所が決まらないと就労不可能な世帯など）によって判定されます。最終的にそれでも同点の場合は抽選となるケースもあります。"
+                }
+            }
+        ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #f8f9fa;
+            color: #444;
+            margin: 0;
+            padding-bottom: 70px;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 32px;
+            min-height: 100vh;
+            border-left: 1px solid #e2e7ea;
+            border-right: 1px solid #e2e7ea;
+        }
+
+        /* ヘッダー */
+        .app-header {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e7ea;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .site-title {
+            text-decoration: none;
+            color: #555858;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            color: #878c8c;
+            font-size: 12px;
+            margin-left: 12px;
+        }
+
+        /* 記事スタイル */
+        .article-badge {
+            background: #f1f5f9;
+            color: #475569;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .article-title {
+            color: #1e293b;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.4;
+        }
+
+        .article-hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .article-body h2 {
+            color: #2c3e50;
+            font-size: 20px;
+            border-bottom: 2px solid #e2e7ea;
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .article-body h3 {
+            color: #2c3e50;
+            font-size: 17px;
+            margin-top: 28px;
+            margin-bottom: 12px;
+            border-left: 4px solid #2d7cbc;
+            padding-left: 12px;
+            font-weight: 700;
+        }
+
+        .article-body p {
+            margin-bottom: 24px;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .article-body ul {
+            background: #f9f9f9;
+            padding: 20px 20px 20px 40px;
+            border-radius: 8px;
+            border: 1px solid #e2e7ea;
+            margin-bottom: 24px;
+        }
+
+        .article-body li {
+            margin-bottom: 10px;
+        }
+
+        /* 目次 */
+        .toc {
+            background: #f8fafc;
+            border: 1px solid #e2e7ea;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 32px;
+        }
+
+        .toc-title {
+            font-weight: 800;
+            font-size: 15px;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        .toc ol {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .toc li {
+            margin-bottom: 6px;
+        }
+
+        .toc a {
+            text-decoration: none;
+            color: #2d7cbc;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        /* インフォボックス */
+        .info-box {
+            background: #fffbe6;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #fce28b;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .info-box-blue {
+            background: #eff6ff;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #bfdbfe;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .info-box-green {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            color: #166534;
+        }
+
+        .info-box-red {
+            background: #fef2f2;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #fecaca;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        /* CTAボックス */
+        .cta-box {
+            background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
+            padding: 24px;
+            border-radius: 12px;
+            border: 2px solid #2d7cbc;
+            margin: 32px 0;
+            text-align: center;
+        }
+
+        .cta-box p {
+            font-size: 15px;
+            color: #1e293b;
+            margin-bottom: 16px;
+        }
+
+        .cta-box .cta-btn {
+            display: inline-block;
+            background: #2d7cbc;
+            color: #fff;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .cta-box .cta-btn:hover {
+            background: #236194;
+        }
+
+        /* スケジュール表 */
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 14px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e2e7ea;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            border: 1px solid #e2e7ea;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .schedule-table th {
+            background: #f8f9fa;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        /* タイムライン */
+        .timeline {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 24px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #bfdbfe;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #2d7cbc;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 2px #2d7cbc;
+        }
+
+        .timeline-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #2d7cbc;
+            margin-bottom: 2px;
+        }
+
+        .timeline-content {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: #2d7cbc;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .back-btn:hover {
+            background: #236194;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 16px;
+            }
+
+            .article-title {
+                font-size: 20px;
+            }
+
+            .schedule-table {
+                font-size: 12px;
+            }
+
+            .schedule-table th,
+            .schedule-table td {
+                padding: 8px;
+            }
+        }
+
+        .site-footer {
+            background: #f8f9fa;
+            border-top: 1px solid #e2e7ea;
+            padding: 24px 16px;
+            text-align: center;
+            margin: 40px -32px -32px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #878c8c;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #2d7cbc;
+        }
+
+        .footer-copy {
+            color: #aaa;
+            font-size: 11px;
+        }
+
+        /* 選考指数の計算式 */
+        .formula-box {
+            background: #f0f9ff;
+            border: 2px solid #2d7cbc;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .formula-box .formula {
+            font-size: 18px;
+            font-weight: 800;
+            color: #1e293b;
+            margin: 8px 0;
+        }
+
+        .formula-box .formula-note {
+            font-size: 13px;
+            color: #555;
+            margin-top: 8px;
+        }
+            .ad-slot { min-height: 0; margin: 0; }
+    </style>
+</head>
+
+<body>
+    <header class="app-header">
+        <a href="index" class="site-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M8 14s1.5 2 4 2 4-2 4-2" /><line x1="9" y1="9" x2="9.01" y2="9" /><line x1="15" y1="9" x2="15.01" y2="9" /></svg>世田谷保育ナビ</a>
+        <nav class="header-nav"><a href="review"><svg width="14" height="14" style="vertical-align:-2px;margin-right:2px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>見学レポート</a>
+                <a href="column">コラム一覧へ戻る</a></nav>
+    </header>
+    <div class="container">
+        <span class="article-badge">保活ガイド</span>
+        <h1 class="article-title">保育園の選考基準・点数の仕組み【世田谷区版】指数の計算方法</h1>
+
+        <!-- 目次 -->
+        <div class="toc">
+            <div class="toc-title">この記事の目次</div>
+            <ol>
+                <li><a href="#intro">はじめに</a></li>
+                <li><a href="#structure">入園選考の仕組み</a></li>
+                <li><a href="#kijun">基準指数の一覧</a></li>
+                <li><a href="#chōsei">調整指数のよくあるパターン</a></li>
+                <li><a href="#wall">「52点の壁」とは</a></li>
+                <li><a href="#upscore">点数を上げるためにできること</a></li>
+                <li><a href="#faq">よくある質問</a></li>
+            </ol>
+        </div>
+
+        <div class="article-body">
+                        <div class="ad-slot" id="ad-in-article"></div>
+            <h2 id="intro">1. はじめに</h2>
+            <p>「うちは保育園に入れるの？」「点数って何点あれば大丈夫？」——保活を始めると、必ず直面するのが<strong>選考指数（点数）</strong>の問題です。</p>
+            <p>世田谷区の認可保育園は、希望者が定員を超えた場合、点数（選考指数）の高い順に入園が決まる仕組みになっています。つまり、<strong>点数の仕組みを理解することが、保活戦略の第一歩</strong>です。</p>
+            <p>この記事では、基準指数と調整指数の計算方法から、「52点の壁」の正体、点数を上げるための具体的な方法まで、世田谷区の保育園選考の仕組みをわかりやすく解説します。</p>
+
+            <div class="info-box-blue">
+                <strong>この記事でわかること</strong><br>
+                ・基準指数・調整指数・選考指数の違いと計算方法<br>
+                ・両親の就労状況別の点数目安<br>
+                ・「52点の壁」の意味と対策<br>
+                ・点数を合法的に上げるためにできること
+            </div>
+
+            <h2 id="structure">2. 入園選考の仕組み</h2>
+            <p>世田谷区の保育園入園選考は、以下の計算式で決まります。</p>
+
+            <div class="formula-box">
+                <div class="formula">基準指数（父） ＋ 基準指数（母） ＋ 調整指数 ＝ 選考指数</div>
+                <div class="formula-note">選考指数が高い順に入園が決定。同点の場合は優先順位で判定されます。</div>
+            </div>
+
+            <h3>同点の場合はどうなる？</h3>
+            <p>選考指数が同点の場合、世田谷区では以下の優先順位で判定が行われます。</p>
+            <ul>
+                <li>ひとり親家庭・生活保護世帯</li>
+                <li>入所が決まらないと就労不可能な世帯（就労開始前）</li>
+                <li>兄弟姉妹が同一保育所に在籍している世帯</li>
+                <li>認可外保育施設等に通っている世帯</li>
+                <li>育児休業から復帰する世帯</li>
+            </ul>
+            <p>それでも同点の場合は、抽選になるケースもあります。できるだけ調整指数で差をつけることが重要です。</p>
+
+            <h2 id="kijun">3. 基準指数の一覧</h2>
+            <p>基準指数は、保護者の<strong>就労状況・疾病・介護など「なぜ保育が必要か」の理由と程度</strong>によって決まります。父母それぞれの基準指数を合算したものが、選考指数の土台になります。</p>
+
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>状況</th>
+                        <th>基準指数</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>月20日以上・週40時間以上の就労（フルタイム）</td>
+                        <td><strong>26点</strong></td>
+                    </tr>
+                    <tr>
+                        <td>月16日以上・週24時間以上の就労</td>
+                        <td><strong>22点</strong></td>
+                    </tr>
+                    <tr>
+                        <td>月12日以上・週16時間以上の就労</td>
+                        <td><strong>18点</strong></td>
+                    </tr>
+                    <tr>
+                        <td>疾病・障害（程度による）</td>
+                        <td><strong>20〜26点</strong></td>
+                    </tr>
+                    <tr>
+                        <td>介護・看護（対象者の状況による）</td>
+                        <td><strong>18〜26点</strong></td>
+                    </tr>
+                    <tr>
+                        <td>求職活動中</td>
+                        <td><strong>10点</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <strong>両親分を合算します</strong><br>
+                基準指数は父・母それぞれの点数を足し合わせます。<br>
+                例：両方フルタイム就労 → 26 ＋ 26 ＝ <strong>52点</strong><br>
+                例：フルタイム＋週24時間以上就労 → 26 ＋ 22 ＝ <strong>48点</strong><br>
+                例：フルタイム＋求職活動中 → 26 ＋ 10 ＝ <strong>36点</strong>
+            </div>
+
+            <h2 id="chōsei">4. 調整指数のよくあるパターン</h2>
+            <p>調整指数は、基準指数に加えて<strong>家庭の特別な事情</strong>を反映させるための加減点です。同じ基準指数の世帯の中で、差がつくポイントになります。</p>
+
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>状況</th>
+                        <th>調整指数</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ひとり親家庭</td>
+                        <td><strong>＋6点</strong></td>
+                    </tr>
+                    <tr>
+                        <td>兄弟・姉妹が同一保育所に在籍（同時申込含む）</td>
+                        <td><strong>＋3点</strong></td>
+                    </tr>
+                    <tr>
+                        <td>育休明けで職場復帰する場合</td>
+                        <td><strong>＋2点</strong></td>
+                    </tr>
+                    <tr>
+                        <td>認可外保育施設等に預けながら申請している</td>
+                        <td><strong>＋2点</strong></td>
+                    </tr>
+                    <tr>
+                        <td>求職中（基準指数10点の場合は認可外に預けていること）</td>
+                        <td>条件による</td>
+                    </tr>
+                    <tr>
+                        <td>就労時間が不足している（虚偽申告等）</td>
+                        <td><strong>減点あり</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box-blue">
+                <strong>調整指数の詳細は毎年更新されます</strong><br>
+                調整指数の内容や点数は年度によって変更されることがあります。必ず最新の「保育施設等利用申込のご案内」（世田谷区発行）でご確認ください。
+            </div>
+
+            <h2 id="wall">5. 「52点の壁」とは</h2>
+            <p>保活界隈でよく耳にする<strong>「52点の壁」</strong>とは、両親ともにフルタイム就労（月20日以上・週40時間以上）の場合の基準指数の合計が52点（26＋26）であることに由来します。</p>
+            <p>世田谷区の人気エリアにある保育園では、<strong>52点でも落ちる</strong>ことが珍しくありません。つまり、フルタイム共働きでも「最低ライン」でしかなく、調整指数でさらに点数を上乗せしなければ、希望する園に入れない可能性があるのです。</p>
+
+            <div class="info-box-red">
+                <strong>52点でも落ちる理由</strong><br>
+                ・申込者全員がフルタイム共働き（52点）の場合、調整指数で差がつく<br>
+                ・人気園ほど倍率が高く、52点＋調整指数の上位者のみ入園できる<br>
+                ・1歳児クラスは特に競争が激しく、52点では足りないケースが多い
+            </div>
+
+            <p>「52点の壁」について、さらに詳しく解説した記事もご覧ください。</p>
+            <p><a href="article_52points" style="color:#2d7cbc; font-weight:bold;">→ 世田谷区の「52点の壁」とは？なぜ52点でも落ちるのか徹底解説</a></p>
+
+            <h2 id="upscore">6. 点数を上げるためにできること</h2>
+            <p>選考指数を少しでも上げるために、保護者ができることを具体的にまとめます。</p>
+
+            <h3>① 就労証明書の時間数を正確に記載する</h3>
+            <p>就労証明書に記載する月の就労日数と週の就労時間が、基準指数を決める直接の根拠になります。残業を含めた実際の就労時間を勤務先に正確に証明してもらうことで、点数が上がる場合があります。「週40時間以上」であれば26点、「週24時間以上」であれば22点と、1段階の差が大きく影響します。</p>
+
+            <h3>② 認可外保育園に預けながら申請する</h3>
+            <p>認可外保育施設（無認可保育園・ベビーシッターなど）に子どもを預けている状態で申請すると、調整指数で＋2点の加算があります。「保育の必要性が高い」とみなされるためです。認可外に通わせながら翌年の認可申込を続ける戦略は、保活の定番手法の一つです。</p>
+
+            <h3>③ 兄弟・姉妹の同園申請を活用する</h3>
+            <p>上の子がすでに通っている保育園、または同時に申し込む場合は、兄弟加点（＋3点）が適用されます。同じ園に通わせたい場合は、きょうだいで同一園を希望することを書類に明記しましょう。</p>
+
+            <div class="cta-box">
+                <p><strong>入りやすい園を探してみましょう</strong><br>空き状況一覧でエリア・年齢別の空き情報をチェックできます。</p>
+                <a href="index" class="cta-btn">空き状況一覧を見る →</a>
+            </div>
+
+            <h2 id="faq">7. よくある質問</h2>
+
+            <h3>Q. 世田谷区の保育園選考では何点あれば入れますか？</h3>
+            <p>両親ともにフルタイム就労（月20日以上・週40時間以上）の場合、基準指数の合計は<strong>52点</strong>になります。これが多くの園で最低ラインとなりますが、<strong>人気の高い園では52点でも落ちるケースがあります</strong>。調整指数で加点を積み上げることが重要です。詳しくは<a href="article_52points" style="color:#2d7cbc;">「52点の壁」の記事</a>をご覧ください。</p>
+
+            <h3>Q. 調整指数で点数を上げる方法はありますか？</h3>
+            <p>主な加点方法として、<strong>兄弟を同じ園に申し込む（＋3点）、認可外保育園に預けながら申請する（＋2点）、育休明け復帰（＋2点）</strong>などがあります。ひとり親家庭は＋6点の加点があります。就労証明書の時間数を正確に記載することも大切です。</p>
+
+            <h3>Q. 同点の場合はどうなりますか？</h3>
+            <p>世田谷区では同点の場合、<strong>優先順位（ひとり親・生活保護世帯、入所が決まらないと就労不可能な世帯など）によって判定</strong>されます。最終的にそれでも同点の場合は抽選となるケースもあります。</p>
+
+            <h2>あわせて読みたい</h2>
+            <ul>
+                <li><a href="article-moushikomi" style="color:#2d7cbc; font-weight:bold;">保育園の申し込み方法・必要書類ガイド【世田谷区版】</a></li>
+                <li><a href="article-iriyasui" style="color:#2d7cbc; font-weight:bold;">世田谷区で保育園に入りやすい区はどこ？</a></li>
+                <li><a href="article-hokatsu-timeline" style="color:#2d7cbc; font-weight:bold;">保活スケジュール完全ガイド｜いつから動けばいい？</a></li>
+                <li><a href="article_52points" style="color:#2d7cbc; font-weight:bold;">世田谷区の「52点の壁」とは？なぜ52点でも落ちるのか徹底解説</a></li>
+            </ul>
+
+            <div style="text-align: center;">
+                <a href="column" class="back-btn">コラム一覧に戻る</a>
+            </div>
+            <div class="ad-slot" id="ad-after-article"></div>
+
+        <footer class="site-footer">
+            <div class="footer-links">
+                <a href="about">運営者情報</a>
+                <a href="privacy">プライバシーポリシー</a>
+                <a href="contact">お問い合わせ</a>
+            </div>
+            <p class="footer-source" style="font-size:11px;color:#aaa;margin:0 0 8px;">データ出典：世田谷区公式「<a href="https://www.city.saitama.lg.jp/006/007/005/002/p001061.html" target="_blank" rel="noopener noreferrer" style="color:#999;text-decoration:underline;">保育施設等の空き状況</a>」をもとに毎月更新</p>
+                <p class="footer-copy">&copy; 2026 世田谷保育ナビ｜運営：√4（ルートフォー）</p>
+        </footer>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KK8KHXY1CK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-KK8KHXY1CK');
+gtag('event', 'column_page_view', { page_title: 'コラム一覧' });
+</script>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="世田谷区の保活・保育園準備に役立つコラム一覧。保育料の目安、入園スケジュール、見学チェックリスト、送迎グッズの選び方など、保活中のパパ・ママに役立つ情報をまとめています。">
+    <meta property="og:title" content="保活・子育てお役立ちコラム | 世田谷保育ナビ">
+    <meta property="og:description" content="保活や保育園準備に役立つコラム一覧。待機児童対策、お金のこと、送迎グッズなど。">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="世田谷保育ナビ">
+    <meta property="og:image" content="https://nursery.setagaya.root-for.jp/images/og-default.png">
+    <link rel="canonical" href="https://nursery.setagaya.root-for.jp/column">
+    <title>世田谷区の保活・子育てお役立ちコラム一覧｜世田谷保育ナビ</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "トップ", "item": "https://nursery.setagaya.root-for.jp/" },
+            { "@type": "ListItem", "position": 2, "name": "コラム一覧" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "保活・子育てお役立ちコラム一覧",
+        "description": "世田谷区の保活・保育園準備に役立つコラム一覧",
+        "url": "https://nursery.setagaya.root-for.jp/column",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "世田谷保育ナビ",
+            "url": "https://nursery.setagaya.root-for.jp/"
+        }
+    }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #f8f9fa;
+            color: #444;
+            margin: 0;
+            padding-bottom: 70px;
+            letter-spacing: 0.03em;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 24px;
+            min-height: 100vh;
+            border-left: 1px solid #e2e7ea;
+            border-right: 1px solid #e2e7ea;
+        }
+
+        .app-header {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e7ea;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+        }
+
+        .site-title {
+            text-decoration: none;
+            color: #555858;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            color: #878c8c;
+            font-size: 12px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .header-nav a:hover,
+        .header-nav a.active {
+            background: #f3f5f4;
+            color: #555858;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+        }
+
+        .page-title {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+
+        .page-desc {
+            font-size: 14px;
+            color: #555858;
+            line-height: 1.6;
+        }
+
+        /* コラム一覧グリッド */
+        .column-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .article-card {
+            background: #ffffff;
+            border: 1px solid #e2e7ea;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .article-thumb {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid #e2e7ea;
+            transition: transform 0.5s ease;
+        }
+
+        .article-card:hover .article-thumb {
+            transform: scale(1.05);
+        }
+
+        .article-thumb-wrapper {
+            overflow: hidden;
+        }
+
+        .article-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .article-badge {
+            background: #f1f5f9;
+            color: #475569;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            align-self: flex-start;
+            font-weight: 700;
+        }
+
+        .article-title {
+            color: #1e293b;
+            font-size: 16px;
+            margin: 0 0 10px 0;
+            font-weight: 800;
+            line-height: 1.5;
+        }
+
+        .article-desc {
+            color: #64748b;
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .site-footer {
+            background: #f8f9fa;
+            border-top: 1px solid #e2e7ea;
+            padding: 24px 16px;
+            text-align: center;
+            margin: 40px -24px -24px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #878c8c;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #2d7cbc;
+        }
+
+        .footer-copy {
+            color: #aaa;
+            font-size: 11px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="app-header">
+        <div class="header-inner">
+            <a href="index" class="site-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M8 14s1.5 2 4 2 4-2 4-2" /><line x1="9" y1="9" x2="9.01" y2="9" /><line x1="15" y1="9" x2="15.01" y2="9" /></svg>世田谷保育ナビ</a>
+            <nav class="header-nav">
+                <a href="guide">初めてガイド</a>
+                <a href="criteria">点数計算</a>
+                <a href="index">空き状況</a>
+                <a href="review">見学レポート</a>
+                <a href="column" class="active">コラム</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">保活・お役立ちコラム</h1>
+            <p class="page-desc">保育園探しから入園準備、復職後のお金のことまで。<br>パパ・ママの役に立つ情報をまとめました。</p>
+        </div>
+
+        <div class="column-grid">
+            <!-- 基礎知識 -->
+            <a href="guide" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="世田谷区の初めての保活ガイド" style="background-image: url('images/guide.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">基礎知識</span>
+                    <h2 class="article-title">【初めての保活】いつから始める？見学のポイントは？</h2>
+                    <p class="article-desc">「何から始めればいいかわからない」という方向けのガイド完全版。</p>
+                </div>
+            </a>
+
+            <!-- 選考基準 -->
+            <a href="criteria" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="世田谷区の保育園選考ポイント計算" style="background-image: url('images/criteria_real_ja.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">選考対策</span>
+                    <h2 class="article-title">世田谷区の「点数計算」の仕組みとボーダーライン</h2>
+                    <p class="article-desc">自分の点数を知ることが保活の第一歩。加点の仕組みも解説します。</p>
+                </div>
+            </a>
+
+            <!-- 52点ボーダーライン -->
+            <a href="article_52points" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="52点のボーダーライン解説" style="background-image: url('images/borderline_real.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">選考対策</span>
+                    <h2 class="article-title">「世帯合計52点」は安全圏？世田谷区保活のボーダーライン解説</h2>
+                    <p class="article-desc">52点の意味と、同点時の優先順位ルール。点数が足りない場合の戦略も徹底解説します。</p>
+                </div>
+            </a>
+
+            <!-- 見学チェックリスト -->
+            <a href="article-kengaku" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="保育園見学チェックリスト" style="background-image: url('images/kengaku_real_ja.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">保活の基本</span>
+                    <h2 class="article-title">保育園見学チェックリスト38項目｜見るべきポイント＆質問集</h2>
+                    <p class="article-desc">先輩ママが実際に使った見学チェックリストを完全公開。絶対に聞くべき5つの質問も。</p>
+                </div>
+            </a>
+
+            <!-- 慣らし保育 -->
+            <a href="article-narashi" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="慣らし保育の期間とスケジュール" style="background-image: url('images/narashi_real_ja.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">入園後の生活</span>
+                    <h2 class="article-title">慣らし保育のリアルと乗り越え方｜期間・スケジュール・泣く時の対処法</h2>
+                    <p class="article-desc">復職前に知っておきたい慣らし保育の全貌。復職日の設定ミスや病気ラッシュへの備え方も。</p>
+                </div>
+            </a>
+
+            <!-- お金・復職 -->
+            <a href="article-fp" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="時短勤務と家計の見直し" style="background-image: url('images/money_real_ja.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">お金・復職</span>
+                    <h2 class="article-title">時短勤務で給料減＆保育料で赤字？復職前に見直す家計のポイント</h2>
+                    <p class="article-desc">「働いているのに手元に残らない」を防ぐためのFP目線のアドバイス。</p>
+                </div>
+            </a>
+
+            <!-- 自転車 -->
+            <a href="article-bicycle" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="子供乗せ電動自転車の選び方比較" style="background-image: url('images/bicycle.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">送迎準備</span>
+                    <h2 class="article-title">【子供2人乗せ】電動自転車の選び方！パナソニック・ヤマハ・ブリヂストン比較</h2>
+                    <p class="article-desc">毎日の送迎の相棒。高価な買い物だからこそ失敗しない選び方をまとめました。</p>
+                </div>
+            </a>
+
+            <!-- ヘルメット -->
+            <a href="article-helmet" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="子供用ヘルメットの選び方" style="background-image: url('images/helmet.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">送迎準備</span>
+                    <h2 class="article-title">子供用ヘルメットの失敗しない選び方・イヤイヤ対策</h2>
+                    <p class="article-desc">「嫌がって被ってくれない…」をどう乗り越えるか。安全基準と対策をご紹介します。</p>
+                </div>
+            </a>
+
+            <!-- 100均グッズ -->
+            <a href="article-100yen" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="100均で揃う保育園準備グッズ" style="background-image: url('images/goods.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">入園準備</span>
+                    <h2 class="article-title">100均で揃う！保育園準備おすすめリスト（ダイソー・セリア）</h2>
+                    <p class="article-desc">お金をかけるところ、安く済ませるところ。賢く100均を活用するリストです。</p>
+                </div>
+            </a>
+
+            <!-- 教育費 -->
+            <a href="article-education-cost" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="共働き世帯の教育費シミュレーション" style="background-image: url('images/education_cost.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">お金</span>
+                    <h2 class="article-title">共働き世帯の教育費のリアル｜0歳〜18歳で総額いくらかかる？</h2>
+                    <p class="article-desc">保育料から大学まで、子育てにかかるお金を年齢別に徹底解説。共働き家庭の教育費計画のヒントに。</p>
+                </div>
+            </a>
+
+            <!-- 西松屋 -->
+            <a href="article-nishimatsuya" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="西松屋の保育園準備おすすめ品" style="background-image: url('images/nishimatsuya.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">入園準備</span>
+                    <h2 class="article-title">西松屋が最強！保育園準備で「まず行くべき」理由とおすすめ品</h2>
+                    <p class="article-desc">肌着もパジャマも布団セットも圧倒的に安い。消耗品は全部西松屋で揃えるのが正解です。</p>
+                </div>
+            </a>
+
+            <!-- ユニクロ -->
+            <a href="article-uniqlo" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="ユニクロの保育園児向けウェア" style="background-image: url('images/uniqlo.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">入園準備</span>
+                    <h2 class="article-title">ユニクロが保育園児の最強ウェア！レギンス・肌着・アウターの選び方</h2>
+                    <p class="article-desc">耐久性が求められるレギンスやアウターはユニクロ一択。保育園NGアイテムにも注意。</p>
+                </div>
+            </a>
+
+            <!-- 無印良品 -->
+            <a href="article-muji" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="無印良品の子育て活用術" style="background-image: url('images/muji.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">暮らし</span>
+                    <h2 class="article-title">無印良品が子育て家庭の味方！食品＆衣類のおすすめ活用術</h2>
+                    <p class="article-desc">復職後の夕飯を15分で完成させる冷凍食品から、敏感肌にやさしいオーガニック肌着まで。</p>
+                </div>
+            </a>
+
+            <!-- 申し込み方法ガイド -->
+            <a href="article-moushikomi" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="保育園の申し込み方法ガイド" style="background-image: url('images/moushikomi.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">保活ガイド</span>
+                    <h2 class="article-title">世田谷区 保育園の申し込み方法ガイド【令和8年度】</h2>
+                    <p class="article-desc">必要書類・申込先・手順をわかりやすく解説。4月入園・途中入園それぞれの申し込み方法。</p>
+                </div>
+            </a>
+
+            <!-- 施設種別の違い -->
+            <a href="article-shisetsurui" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="認可保育園・認定こども園・小規模保育の違い" style="background-image: url('images/shisetsurui.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">保活ガイド</span>
+                    <h2 class="article-title">認可保育園・認定こども園・小規模保育の違いを比較</h2>
+                    <p class="article-desc">対象年齢・保育時間・保育料・空き状況の違いをわかりやすく比較。自分に合った施設の選び方。</p>
+                </div>
+            </a>
+
+            <!-- 4月入園の空き状況 -->
+            <a href="article-april" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="4月入園の空き状況" style="background-image: url('images/april.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">保活</span>
+                    <h2 class="article-title">世田谷区の保育園 4月入園の空き状況【2026年最新】</h2>
+                    <p class="article-desc">一次選考後の空き・二次募集・途中入園の最新情報。4月に入れなかった場合の対策も。</p>
+                </div>
+            </a>
+
+
+            <!-- 待機児童数 -->
+            <a href="article-taikiji" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="世田谷区の待機児童数" style="background:#e0f2fe; display:flex; align-items:center; justify-content:center; font-size:40px;">📊</div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">保活データ</span>
+                    <h2 class="article-title">世田谷区の待機児童数【2025年・2026年最新】区別の実態と保活への影響</h2>
+                    <p class="article-desc">「待機ゼロ」でも入れない理由とは？保留児童数の実態と区別の激戦状況を徹底解説。</p>
+                </div>
+            </a>
+
+            <!-- 入りやすい区ランキング -->
+            <a href="article-iriyasui" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="世田谷区で保育園に入りやすい区" style="background-image: url('images/iriyasui.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">保活</span>
+                    <h2 class="article-title">世田谷区で保育園に入りやすい区は？【2026年版ランキング】</h2>
+                    <p class="article-desc">全10区を入りやすさで比較。岩槻区・見沼区が狙い目？区ごとの競争率と対策を解説。</p>
+                </div>
+            </a>
+
+            <!-- 申し込みスケジュール -->
+            <a href="article-schedule" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="保育園申し込みスケジュール" style="background-image: url('images/schedule.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">保活</span>
+                    <h2 class="article-title">世田谷区の保育園申し込みスケジュール完全ガイド</h2>
+                    <p class="article-desc">いつ何をすればいい？4月入園に向けた月別タイムラインと必要書類をまとめました。</p>
+                </div>
+            </a>
+
+            <!-- 保育料 -->
+            <a href="article-hoikuryo" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="世田谷区の保育料早見表" style="background-image: url('images/hoikuryo.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">お金</span>
+                    <h2 class="article-title">世田谷区の保育料はいくら？世帯年収別の早見表</h2>
+                    <p class="article-desc">年収別の保育料目安、無償化制度、保育料を抑えるコツまで分かりやすく解説。</p>
+                </div>
+            </a>
+
+            <!-- 途中入園 -->
+            <a href="article-tochu-nyuen" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="途中入園の方法と攻略法" style="background-image: url('images/tochu-nyuen.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">保活</span>
+                    <h2 class="article-title">世田谷区の保育園は途中入園できる？空き状況の見方と攻略法</h2>
+                    <p class="article-desc">年度途中でも入れる？入りやすい時期・年齢・申し込み方法を解説。</p>
+                </div>
+            </a>
+
+            <!-- 空きが出やすい月 -->
+            <a href="article-akiyasui-tsuki" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="保育園の空きが出やすい月" style="background-image: url('images/akiyasui-tsuki.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">保活</span>
+                    <h2 class="article-title">保育園の空きが出やすい月はいつ？【世田谷区データから分析】</h2>
+                    <p class="article-desc">月ごとの空き状況データを分析。途中入園を狙うなら、この時期が狙い目です。</p>
+                </div>
+            </a>
+
+            <!-- 途中入園スケジュール -->
+            <a href="article-tochu-schedule" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="途中入園の申し込みスケジュール" style="background-image: url('images/schedule.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">保活</span>
+                    <h2 class="article-title">途中入園の申し込みスケジュール【世田谷区 令和8年度】月別締切一覧</h2>
+                    <p class="article-desc">月別の申し込み締切日・結果通知日・入園日を一覧化。入園を逃さないための月別カレンダー。</p>
+                </div>
+            </a>
+
+            <a href="article-stamp" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" style="background-image: url('images/stamp.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">入園準備</span>
+                    <h2 class="article-title">全ての持ち物に記名！？「お名前スタンプ」の魔法と時間術</h2>
+                    <p class="article-desc">オムツから靴下まで。毎日の地獄の記名作業を一瞬で終わらせる必須アイテムをご紹介。</p>
+                </div>
+            </a>
+
+            <!-- 保活ガイド（Phase 2） -->
+            <a href="article-kengaku-fukusou" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="保育園見学の服装・持ち物マナー" style="background-image: url('images/kengaku-fukusou.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">保活ガイド</span>
+                    <h2 class="article-title">保育園見学の服装・持ち物マナー完全ガイド</h2>
+                    <p class="article-desc">見学当日に何を着ていく？何を持っていく？マナーを押さえて好印象を残しましょう。</p>
+                </div>
+            </a>
+
+            <a href="article-hoikuen-youchien" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="保育園と幼稚園の違い" style="background-image: url('images/hoikuen-youchien.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">保活ガイド</span>
+                    <h2 class="article-title">保育園と幼稚園の違いを徹底比較（認定こども園含む）</h2>
+                    <p class="article-desc">「どっちに入れればいい？」を解決。保育時間・費用・入園方法の違いをわかりやすく比較します。</p>
+                </div>
+            </a>
+
+            <a href="article-sensoku-kijun" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="保育園の選考基準・点数の仕組み" style="background-image: url('images/sensoku-kijun.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">保活ガイド</span>
+                    <h2 class="article-title">保育園の選考基準・点数の仕組みをわかりやすく解説</h2>
+                    <p class="article-desc">「なぜ落ちたのか」「どうすれば通るか」を知るために、選考基準の全体像を理解しましょう。</p>
+                </div>
+            </a>
+
+            <a href="article-ochita" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="保育園に落ちたらどうする" style="background-image: url('images/ochita.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">保活ガイド</span>
+                    <h2 class="article-title">保育園に落ちたらどうする？【世田谷区】二次募集・認可外・育休延長の選択肢</h2>
+                    <p class="article-desc">不承諾通知が届いた後にできること。二次募集の申し込み方法から育休延長の手続きまで解説します。</p>
+                </div>
+            </a>
+
+            <a href="article-hokatsu-timeline" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="共働き世帯の保活タイムライン" style="background-image: url('images/hokatsu-timeline.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">保活ガイド</span>
+                    <h2 class="article-title">保活はいつから？共働き世帯の保活タイムライン【月別スケジュール】</h2>
+                    <p class="article-desc">妊娠中から入園まで、何をいつやればいいか月別に整理。0歳・1歳入園・途中入園それぞれに対応。</p>
+                </div>
+            </a>
+
+            <a href="article-shokibo" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="小規模保育園のメリット・デメリット" style="background-image: url('images/shokibo.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">保活ガイド</span>
+                    <h2 class="article-title">小規模保育園のメリット・デメリット｜2歳以降はどうなる？</h2>
+                    <p class="article-desc">少人数でアットホームな小規模保育。入りやすいが2歳以降の転園が必要。選ぶ際のポイントを解説。</p>
+                </div>
+            </a>
+
+            <!-- 育休・お金（Phase 2） -->
+            <a href="article-ikukyu-kihon" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="育休制度の基本まるわかりガイド" style="background-image: url('images/ikukyu-kihon.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">育休・お金</span>
+                    <h2 class="article-title">育休制度の基本まるわかりガイド｜取得条件・期間・給付金</h2>
+                    <p class="article-desc">育休の取り方、期間の上限、給付金の計算方法まで。パパ・ママそれぞれの取り方も解説します。</p>
+                </div>
+            </a>
+
+            <a href="article-papamama-ikukyu-plus" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="パパママ育休プラス完全図解" style="background-image: url('images/papamama-ikukyu-plus.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">育休・お金</span>
+                    <h2 class="article-title">パパママ育休プラス完全図解｜1歳2ヶ月まで育休を延ばす方法</h2>
+                    <p class="article-desc">パパとママが交代で育休を取ることで最長1歳2ヶ月まで延長できる制度の仕組みと活用法。</p>
+                </div>
+            </a>
+
+            <a href="article-ikukyu-enchou" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="育休延長の条件と手続き" style="background-image: url('images/ikukyu-enchou.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">育休・お金</span>
+                    <h2 class="article-title">育休延長の条件と手続き｜1歳6ヶ月・2歳まで延長するには</h2>
+                    <p class="article-desc">保育園に落ちた後、育休を延長する方法を解説。会社への申請から雇用保険の手続きまでステップで説明。</p>
+                </div>
+            </a>
+
+            <a href="article-ikukyu-kyufukin" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="育児休業給付金の計算ガイド" style="background-image: url('images/ikukyu-kyufukin.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">育休・お金</span>
+                    <h2 class="article-title">育児休業給付金はいくらもらえる？計算方法と受け取り方ガイド</h2>
+                    <p class="article-desc">手取り給与の何割もらえる？給付金の計算式、支払いスケジュール、申請手順を分かりやすく解説。</p>
+                </div>
+            </a>
+
+            <!-- 入園準備・グッズ（Phase 3） -->
+            <a href="article-nyuen-junbi" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="保育園の入園準備リスト完全版" style="background-image: url('images/nyuen-junbi.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">入園準備・グッズ</span>
+                    <h2 class="article-title">保育園の入園準備リスト完全版【カテゴリ別チェックリスト】</h2>
+                    <p class="article-desc">衣類・寝具・食事・文具をカテゴリ別にチェックリスト化。100均で揃うもの・名前つけのコツも。</p>
+                </div>
+            </a>
+
+            <a href="article-omutsu" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="保育園用おむつ・おしりふき比較" style="background-image: url('images/omutsu.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">入園準備・グッズ</span>
+                    <h2 class="article-title">保育園用おむつ・おしりふき比較【ブランド別まとめ】</h2>
+                    <p class="article-desc">毎日大量に使うおむつ・おしりふき。コスパ・使い心地・園のルールで選ぶポイントを解説します。</p>
+                </div>
+            </a>
+
+            <a href="article-ohirune-futon" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="お昼寝布団の選び方" style="background-image: url('images/ohirune-futon.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">入園準備・グッズ</span>
+                    <h2 class="article-title">保育園のお昼寝布団 選び方ガイド【サイズ・素材・収納】</h2>
+                    <p class="article-desc">園によって指定サイズが異なるお昼寝布団。失敗しない選び方・持ち運びやすい布団袋の選び方も。</p>
+                </div>
+            </a>
+
+            <a href="article-namae-tsuke" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="名前つけグッズ比較" style="background-image: url('images/namae-tsuke.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">入園準備・グッズ</span>
+                    <h2 class="article-title">保育園の名前つけグッズ比較【スタンプ・シール・手書き】</h2>
+                    <p class="article-desc">大量の持ち物への記名を効率化するグッズを徹底比較。スタンプ・ノンアイロンシール・お名前シールの使い分けも。</p>
+                </div>
+            </a>
+
+            <a href="article-tsuuen-bag" class="article-card">
+                <div class="article-thumb-wrapper">
+                    <div class="article-thumb" role="img" aria-label="通園バッグ・レッスンバッグの選び方" style="background-image: url('images/tsuuen-bag.webp');"></div>
+                </div>
+                <div class="article-content">
+                    <span class="article-badge">入園準備・グッズ</span>
+                    <h2 class="article-title">通園バッグ・レッスンバッグの選び方【保育園・幼稚園向け】</h2>
+                    <p class="article-desc">毎日使う通園バッグは丈夫さが命。手作り・既製品それぞれの選び方とおすすめをご紹介します。</p>
+                </div>
+            </a>
+        </div>
+
+        <footer class="site-footer">
+            <div class="footer-links">
+                <a href="about">運営者情報</a>
+                <a href="privacy">プライバシーポリシー</a>
+                <a href="contact">お問い合わせ</a>
+            </div>
+            <p class="footer-source" style="font-size:11px;color:#aaa;margin:0 0 8px;">データ出典：世田谷区公式「<a href="https://www.city.saitama.lg.jp/006/007/005/002/p001061.html" target="_blank" rel="noopener noreferrer" style="color:#999;text-decoration:underline;">保育施設等の空き状況</a>」をもとに毎月更新</p>
+                <p class="footer-copy">&copy; 2026 世田谷保育ナビ｜運営：√4（ルートフォー）</p>
+        </footer>
+    </div>
+</body>
+
+</html>
